@@ -1,13 +1,15 @@
 // ==UserScript==
-// @name        Extra Flags for int
+// @name        Extra Historical Flags for 4chan
 // @namespace   com.whatisthisimnotgoodwithcomputers.extraflagsforint
-// @description Extra Flags for int
+// @description Extra Historical Flags for 4chan
 // @include     http*://boards.4chan.org/int/*
 // @include     http*://boards.4chan.org/sp/*
+// @include     http*://boards.4chan.org/his/*
 // @include     http*://boards.4chan.org/pol/*
 // @exclude     http*://boards.4chan.org/int/catalog
 // @exclude     http*://boards.4chan.org/sp/catalog
 // @exclude     http*://boards.4chan.org/pol/catalog
+// @exclude     http*://boards.4chan.org/his/catalog
 // @version     0.13
 // @grant       GM_xmlhttpRequest
 // @grant       GM_registerMenuCommand
@@ -33,7 +35,7 @@ var setup = {
 	namespace: 'com.whatisthisimnotgoodwithcomputers.extraflagsforint',
 	id: "ExtraFlags-setup",
 	html: function () {
-		return '<div>Extra Flags for /int/</div><ul>Region: <li><input type="text" name="region" value="' + region + '"></li>Leave blank to use geolocation</ul><div><button name="save">Save settings</button></div></div>';
+		return '<div>Extra Flags for 4han</div><ul>Region: <li><input type="text" name="region" value="' + region + '"></li>Leave blank to use geolocation</ul><div><button name="save">Save settings</button></div></div>';
 	},
 	q: function(n) {
 		return document.querySelector('#' + this.id + ' *[name="' + n + '"]');
