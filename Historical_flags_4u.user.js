@@ -35,7 +35,7 @@ var setup = {
 	namespace: 'com.whatisthisimnotgoodwithcomputers.extraflagsforint',
 	id: "ExtraFlags-setup",
 	html: function () {
-		return '<div>Extra Flags for 4han</div><ul>Region: <li><input type="text" name="region" value="' + region + '"></li>Leave blank to use geolocation</ul><div><button name="save">Save settings</button></div></div>';
+		return '<div>Extra Historical Flags for 4han</div><ul>Region: <li><input type="text" name="region" value="' + region + '"></li>Leave blank to use geolocation</ul><div><button name="save">Save settings</button></div></div>';
 	},
 	q: function(n) {
 		return document.querySelector('#' + this.id + ' *[name="' + n + '"]');
@@ -77,7 +77,7 @@ var setup = {
 		return GM_getValue(setup.namespace + k);
 	},
 	init: function() {
-		GM_registerMenuCommand('Set up Extra Flags for /int/', setup.show);
+		GM_registerMenuCommand('Set up Extra Historical Flags for 4chan', setup.show);
 	}
 };
 
