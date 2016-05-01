@@ -15,8 +15,8 @@
 // @grant       GM_setValue
 // @grant       GM_addStyle
 // @run-at      document-end
-// @updateURL	https://github.com/flaghunters/Extra-Flags-for-int-/raw/master/Extra%20Flags%20for%20int.user.js
-// @downloadURL	https://github.com/flaghunters/Extra-Flags-for-int-/raw/master/Extra%20Flags%20for%20int.user.js
+// @updateURL	https://github.com/Kunanon/Extra-Flags-for-4chan/raw/master/Extra%20Historical%flags%4u.user.js
+// @downloadURL	https://github.com/Kunanon/Extra-Flags-for-4chan/raw/master/Extra%20Historical%flags%4u.user.js
 // ==/UserScript==
 
 var region = "";
@@ -24,7 +24,7 @@ var allPostsOnPage = new Array();
 var postNrs = new Array();
 var postRemoveCounter = 60;
 var requestRetryInterval = 5000;
-var flegsBaseUrl = 'https://raw.githubusercontent.com/flaghunters/Extra-Flags-for-int-/master/flegs/';
+var flegsBaseUrl = 'https://raw.githubusercontent.com/Kunanon/Extra-Flags-for-4chan/master/flegs/';
 var navigatorIsWebkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1;
 var backendBaseUrl = 'https://whatisthisimnotgoodwithcomputers.com/';
 
@@ -168,7 +168,7 @@ function onFlagsLoad(response) {
 		nameBlock.appendChild(newFlag);
 		newFlag.title = post.region;
 		var newFlagImgOpts = 'onerror="(function () {var extraFlagsImgEl = document.getElementById(\'pc' + post.post_nr + '\').getElementsByClassName(\'extraFlag\')[0].firstElementChild; if (!/\\/empty\\.png$/.test(extraFlagsImgEl.src)) {extraFlagsImgEl.src = \'' + flegsBaseUrl + 'empty.png\';}})();"';
-		newFlag.innerHTML = "<img src='" + flegsBaseUrl + currentFlag.title + "/" + post.region + ".png'" + newFlagImgOpts + ">";
+		newFlag.innerHTML = "<img src='" + flegsBaseUrl + post.region + ".png'" + newFlagImgOpts + ">";
 		newFlag.className = "extraFlag";
 		newFlag.href = "https://www.google.com/search?q=" + post.region + ", " + currentFlag.title;
 		newFlag.target = '_blank';
